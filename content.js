@@ -72,7 +72,6 @@ window.SITE_DATA = {
     resume: {
       eyebrow: '简历概览',
       title: '经历与能力一览',
-      note: '完整 PDF 简历待放入本网站；未确认的手机号、邮箱不予公开。',
       sections: [
         {
           heading: '教育背景',
