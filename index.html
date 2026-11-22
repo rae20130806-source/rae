@@ -110,7 +110,8 @@ button { font: inherit; cursor: pointer; }
 .hero-copy { min-width: 0; }
 .hero-name { font-family: var(--font-serif); font-size: clamp(48px, 10vw, 92px); line-height: .98; font-weight: 500; letter-spacing: -.02em; margin: 0; }
 .hero-name .en { display: block; font-style: italic; color: var(--accent); font-size: .5em; margin-top: 4px; }
-.hero-role { font-size: clamp(13px, 2.4vw, 19px); letter-spacing: .04em; color: var(--ink); margin: 22px 0 18px; font-weight: 600; }
+.hero-tagline { font-family: var(--font-serif); font-style: italic; font-size: clamp(17px, 2.6vw, 23px); line-height: 1.5; color: var(--accent); margin: 18px 0 6px; max-width: 22ch; }
+.hero-role { font-size: clamp(13px, 2.4vw, 18px); letter-spacing: .04em; color: var(--ink); font-weight: 600; margin: 0 0 22px; }
 .hero-seeking { margin-bottom: 18px; }
 .hero-seeking__label { display: block; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 8px; }
 .hero-intro { color: var(--ink-soft); font-size: clamp(15px, 2.1vw, 18px); line-height: 1.8; max-width: 58ch; margin: 0 0 22px; }
@@ -247,6 +248,53 @@ button { font: inherit; cursor: pointer; }
 .lightbox__close { position: absolute; top: 20px; right: 24px; background: transparent; border: 0; color: #fff; font-size: 36px; line-height: 1; width: 44px; height: 44px; }
 
 /* ==========================================================================
+   v3 新增：层级强化 + About 内嵌结构 + STAR + 一句话总结
+   ========================================================================== */
+/* 三级标题统一视觉层级：二级(sub-title) > 正文 > 细项 */
+.sub-title { font-family: var(--font-serif); font-size: clamp(21px, 3.4vw, 28px); font-weight: 500; line-height: 1.3; margin: 0 0 18px; }
+
+/* About：个人介绍 / 实践经历 / 核心优势 / 工具技能 */
+.about-intro { margin: 34px 0 46px; max-width: 820px; }
+.about-intro p { margin: 0 0 16px; color: var(--ink-soft); font-size: clamp(15px, 2vw, 17px); line-height: 1.95; }
+.about-intro p:last-child { margin-bottom: 0; }
+.about-experience { margin: 46px 0 56px; }
+.exp-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.exp-item { background: var(--paper); padding: 24px; }
+.exp-item h4 { font-size: 15px; font-weight: 600; color: var(--accent); margin: 0 0 12px; letter-spacing: .02em; }
+.exp-item p { margin: 0 0 12px; font-size: 14px; line-height: 1.8; color: var(--ink-soft); }
+.exp-item p:last-child { margin-bottom: 0; }
+.about-competencies, .about-skills { margin-top: 64px; padding-top: 56px; border-top: 1px solid var(--line-strong); }
+.about-competencies .lead, .about-skills .lead { margin-bottom: 26px; }
+
+/* comp-card 标题改为 h4（层级：section h2 > sub-title h3 > comp h4） */
+.comp-card__body h4 { font-size: 17px; font-weight: 600; margin: 0 0 10px; }
+.skill-group h4 { font-size: 16px; font-weight: 600; margin: 0 0 14px; }
+
+/* 项目卡片补充经历区块 */
+.additional-wrap { margin-top: 56px; padding-top: 44px; border-top: 1px solid var(--line-strong); }
+
+/* 项目详情：STAR 段落 + 一句话总结 + 素材需求 */
+.project-hero__type { font-size: 13px; color: var(--ink-soft); margin: 0 0 16px; }
+.project-hero__type span { color: var(--ink-faint); }
+.sec-label { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); font-weight: 600; font-family: var(--font-sans); }
+.project-section { grid-template-columns: 150px 1fr; }
+.project-section__body p { margin: 0 0 14px; font-size: clamp(15px, 2vw, 17px); line-height: 1.9; color: var(--ink-soft); }
+.project-section__body p:last-child { margin-bottom: 0; }
+.project-section--result { background: var(--accent-soft); border-left: 3px solid var(--accent); padding: 22px 24px; border-radius: var(--radius); }
+.project-section--result .project-section__body p { color: var(--ink); }
+
+.one-liner { margin: 40px 0; padding: 28px 30px; background: var(--ink); color: #fff; border-radius: var(--radius); }
+.one-liner__label { display: block; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: #c9b99d; margin-bottom: 12px; }
+.one-liner p { font-family: var(--font-serif); font-size: clamp(20px, 3.4vw, 30px); line-height: 1.45; margin: 0; }
+
+.materials { margin: 0 0 34px; padding: 18px 20px; border: 1px dashed var(--line-strong); border-radius: var(--radius); }
+.materials__label { display: block; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 8px; }
+.materials p { margin: 0; font-size: 14px; line-height: 1.75; color: var(--ink-soft); }
+
+/* 结果大数字更突出（仅详情页 stats） */
+.stat__value { font-family: var(--font-serif); font-size: clamp(34px, 6vw, 52px); line-height: 1; color: var(--ink); }
+
+/* ==========================================================================
    响应式
    ========================================================================== */
 @media (max-width: 1020px) {
@@ -264,8 +312,9 @@ button { font: inherit; cursor: pointer; }
 @media (max-width: 780px) {
   .hero-grid { grid-template-columns: 1fr; }
   .photo-frame { order: -1; width: 120px; }
-  .comp-grid, .skill-grid, .contact-grid { grid-template-columns: 1fr; }
+  .comp-grid, .skill-grid, .contact-grid, .exp-grid { grid-template-columns: 1fr; }
   .project-grid { grid-template-columns: 1fr; }
+  .one-liner { padding: 22px 20px; }
   .evidence-grid { grid-template-columns: 1fr; }
   .project-section { grid-template-columns: 1fr; gap: 8px; }
   .project-nav { grid-template-columns: 1fr; }
@@ -303,11 +352,7 @@ button { font: inherit; cursor: pointer; }
   <main id="main">
     <section id="home" class="section hero" aria-labelledby="hero-title"></section>
     <section id="about" class="section section--alt" aria-labelledby="about-title"></section>
-    <section id="competencies" class="section" aria-labelledby="competencies-title"></section>
-    <section id="skills" class="section section--alt" aria-labelledby="skills-title"></section>
-    <section id="resume" class="section" aria-labelledby="resume-title"></section>
-    <section id="portfolio" class="section section--alt" aria-labelledby="portfolio-title"></section>
-    <section id="experience" class="section" aria-labelledby="experience-title"></section>
+    <section id="portfolio" class="section" aria-labelledby="portfolio-title"></section>
     <section id="contact" class="section section--alt" aria-labelledby="contact-title"></section>
   </main>
 
@@ -367,6 +412,10 @@ button { font: inherit; cursor: pointer; }
     return String(s == null ? '' : s)
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  function paras(arr) {
+    return (arr || []).map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('');
   }
 
   function navHref(id) { return isProjectPage ? 'index.html#' + id : '#' + id; }
@@ -458,101 +507,67 @@ button { font: inherit; cursor: pointer; }
         '<div class="hero-copy">' +
           '<p class="eyebrow">' + esc(d.eyebrow) + '</p>' +
           '<h1 class="hero-name" id="hero-title">' + esc(d.name) + '<span class="en">' + esc(d.nameEn) + '</span></h1>' +
+          '<p class="hero-tagline">' + esc(d.tagline) + '</p>' +
           '<p class="hero-role">' + esc(d.role) + '</p>' +
-          '<div class="hero-seeking"><span class="hero-seeking__label">' + esc(lang === 'zh' ? '求职方向' : 'Seeking') + '</span>' +
+          '<div class="hero-seeking"><span class="hero-seeking__label">' + esc(ui.seeking) + '</span>' +
             '<div class="chip-row">' + chips + '</div></div>' +
-          '<p class="hero-intro">' + esc(d.intro) + '</p>' +
+          '<p class="hero-intro">' + esc(d.intro).replace(/\n/g, '<br />') + '</p>' +
           '<div class="hero-meta">' +
-            '<div><strong>' + esc(lang === 'zh' ? '城市' : 'Location') + '：</strong>' + esc(d.location) + '</div>' +
-            '<div><strong>' + esc(lang === 'zh' ? '求职类型' : 'Open to') + '：</strong>' + esc(d.availability) + '</div>' +
+            '<div><strong>' + esc(ui.location) + '：</strong>' + esc(d.location) + '</div>' +
+            '<div><strong>' + esc(ui.availability) + '：</strong>' + esc(d.availability) + '</div>' +
           '</div>' +
           '<div class="btn-row">' +
             '<a class="btn btn--solid" href="#portfolio">' + esc(ui.viewWork) + '</a>' +
+            '<a class="btn btn--ghost" href="#about">' + esc(ui.aboutMe) + '</a>' +
             '<button class="btn btn--ghost" type="button" data-resume>' + esc(ui.downloadResume) + '</button>' +
-            '<a class="btn btn--ghost" href="#contact">' + esc(ui.contactMe) + '</a>' +
           '</div>' +
         '</div>' +
         '<div class="photo-frame">' + photo + '</div>' +
       '</div>';
   }
 
-  /* ---------------- About ---------------- */
+  /* ---------------- About（个人介绍 + 实践经历 + 核心优势 + 工具技能） ---------------- */
   function renderAbout() {
-    var d = t().about;
-    var blocks = d.blocks.map(function (b) {
-      return '<div class="about-block"><h3 class="about-block__tag">' + esc(b.tag) + '</h3>' +
-        b.paragraphs.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') + '</div>';
+    var d = t().about, comp = t().competencies, sk = t().skills;
+
+    var intro = '<div class="about-intro"><h3 class="sub-title">' + esc(d.introTitle) + '</h3>' + paras(d.intro) + '</div>';
+
+    var exps = d.experiences.map(function (e) {
+      return '<div class="exp-item"><h4>' + esc(e.title) + '</h4>' + paras(e.paragraphs) + '</div>';
     }).join('');
+    var experience = '<div class="about-experience"><h3 class="sub-title">' + esc(d.experienceTitle) + '</h3>' +
+      '<div class="exp-grid">' + exps + '</div></div>';
+
+    var comps = comp.items.map(function (it) {
+      return '<article class="comp-card">' +
+        '<div class="comp-card__no">' + esc(it.no) + '</div>' +
+        '<div class="comp-card__body"><h4>' + esc(it.title) + '</h4>' +
+        '<p>' + esc(it.desc) + '</p></div></article>';
+    }).join('');
+    var competencies = '<div class="about-competencies" id="competencies">' +
+      '<p class="eyebrow">' + esc(comp.eyebrow) + '</p>' +
+      '<h3 class="sub-title">' + esc(comp.title) + '</h3>' +
+      '<p class="lead">' + esc(comp.intro) + '</p>' +
+      '<div class="comp-grid">' + comps + '</div></div>';
+
+    var groups = sk.groups.map(function (g) {
+      var tools = g.tools.map(function (x) { return '<span class="chip">' + esc(x) + '</span>'; }).join('');
+      return '<div class="skill-group"><h4>' + esc(g.title) + '</h4>' +
+        '<div class="chip-row">' + tools + '</div>' +
+        '<p class="skill-group__usage">' + esc(g.usage) + '</p></div>';
+    }).join('');
+    var skills = '<div class="about-skills" id="skills">' +
+      '<p class="eyebrow">' + esc(sk.eyebrow) + '</p>' +
+      '<h3 class="sub-title">' + esc(sk.title) + '</h3>' +
+      '<p class="lead">' + esc(sk.intro) + '</p>' +
+      '<div class="skill-grid">' + groups + '</div>' +
+      '<p class="skill-note">' + esc(sk.note) + '</p></div>';
+
     document.getElementById('about').innerHTML =
       '<div class="wrap">' +
         '<p class="eyebrow">' + esc(d.eyebrow) + '</p>' +
         '<h2 class="section-title" id="about-title">' + esc(d.title) + '</h2>' +
-        '<div class="about-grid-main">' + blocks + '</div>' +
-      '</div>';
-  }
-
-  /* ---------------- Competencies ---------------- */
-  function renderCompetencies() {
-    var d = t().competencies;
-    var items = d.items.map(function (it) {
-      return '<article class="comp-card">' +
-        '<div class="comp-card__no">' + esc(it.no) + '</div>' +
-        '<div class="comp-card__body">' +
-          '<h3>' + esc(it.title) + '</h3>' +
-          '<p>' + esc(it.desc) + '</p>' +
-          (it.detail ? '<p class="comp-card__detail">' + esc(it.detail) + '</p>' : '') +
-          (it.note ? '<p class="comp-card__note">' + esc(it.note) + '</p>' : '') +
-        '</div></article>';
-    }).join('');
-    document.getElementById('competencies').innerHTML =
-      '<div class="wrap">' +
-        '<p class="eyebrow">' + esc(d.eyebrow) + '</p>' +
-        '<h2 class="section-title" id="competencies-title">' + esc(d.title) + '</h2>' +
-        '<p class="lead">' + esc(d.intro) + '</p>' +
-        '<div class="comp-grid">' + items + '</div>' +
-      '</div>';
-  }
-
-  /* ---------------- Skills ---------------- */
-  function renderSkills() {
-    var d = t().skills;
-    var groups = d.groups.map(function (g) {
-      var tools = g.tools.map(function (x) { return '<span class="chip">' + esc(x) + '</span>'; }).join('');
-      return '<div class="skill-group">' +
-        '<h3>' + esc(g.title) + '</h3>' +
-        '<div class="chip-row">' + tools + '</div>' +
-        '<p class="skill-group__usage">' + esc(g.usage) + '</p>' +
-        '</div>';
-    }).join('');
-    document.getElementById('skills').innerHTML =
-      '<div class="wrap">' +
-        '<p class="eyebrow">' + esc(d.eyebrow) + '</p>' +
-        '<h2 class="section-title" id="skills-title">' + esc(d.title) + '</h2>' +
-        '<p class="lead">' + esc(d.intro) + '</p>' +
-        '<div class="skill-grid">' + groups + '</div>' +
-        '<p class="skill-note">' + esc(d.note) + '</p>' +
-      '</div>';
-  }
-
-  /* ---------------- Resume ---------------- */
-  function renderResume() {
-    var d = t().resume, ui = t().ui;
-    var blocks = d.sections.map(function (sec) {
-      var items = sec.items.map(function (it) {
-        var sub = it.sub ? '<div class="resume-item__sub">' + esc(it.sub) + '</div>' : '';
-        var time = it.time && it.time !== '—' ? '<div class="resume-item__time">' + esc(it.time) + '</div>' : '';
-        var desc = it.desc ? '<div class="resume-item__desc">' + esc(it.desc) + '</div>' : '';
-        return '<div class="resume-item"><div><h4 class="resume-item__title">' + esc(it.title) + '</h4>' + sub + '</div>' + time + desc + '</div>';
-      }).join('');
-      return '<div class="resume-block"><h3>' + esc(sec.heading) + '</h3>' + items + '</div>';
-    }).join('');
-    document.getElementById('resume').innerHTML =
-      '<div class="wrap">' +
-        '<p class="eyebrow">' + esc(d.eyebrow) + '</p>' +
-        '<h2 class="section-title" id="resume-title">' + esc(d.title) + '</h2>' +
-        '<p class="resume-note">' + esc(d.note) + '</p>' +
-        '<button class="btn btn--solid btn--sm" type="button" data-resume style="margin:20px 0 8px">' + esc(ui.downloadResume) + '</button>' +
-        blocks +
+        intro + experience + competencies + skills +
       '</div>';
   }
 
@@ -581,33 +596,21 @@ button { font: inherit; cursor: pointer; }
   }
 
   function renderProjectsInto(el, featured) {
-    var d = t();
-    var list = d.projects.filter(function (p) { return !!p.featured === featured; });
-    var cards = list.map(renderCard).join('');
-    el.innerHTML = '<div class="project-grid">' + cards + '</div>';
+    var list = t().projects.filter(function (p) { return !!p.featured === featured; });
+    el.innerHTML = '<div class="project-grid">' + list.map(renderCard).join('') + '</div>';
   }
 
   function renderPortfolio() {
-    var d = t();
     document.getElementById('portfolio').innerHTML =
       '<div class="wrap">' +
         '<p class="eyebrow">Portfolio</p>' +
         '<h2 class="section-title" id="portfolio-title">' +
-          esc(lang === 'zh' ? '重点项目作品' : 'Featured projects') + '</h2>' +
+          esc(t().ui.featured) + '</h2>' +
         '<div id="featured-grid"></div>' +
+        '<div class="additional-wrap"><h3 class="sub-title" id="experience-title">' + esc(t().ui.additional) + '</h3>' +
+          '<div id="additional-grid"></div></div>' +
       '</div>';
     renderProjectsInto(document.getElementById('featured-grid'), true);
-  }
-
-  function renderExperience() {
-    var d = t();
-    document.getElementById('experience').innerHTML =
-      '<div class="wrap">' +
-        '<p class="eyebrow">Experience</p>' +
-        '<h2 class="section-title" id="experience-title">' +
-          esc(lang === 'zh' ? '更多经历' : 'Additional experience') + '</h2>' +
-        '<div id="additional-grid"></div>' +
-      '</div>';
     renderProjectsInto(document.getElementById('additional-grid'), false);
   }
 
@@ -659,9 +662,9 @@ button { font: inherit; cursor: pointer; }
   /* ---------------- 素材（图片 / 视频） ---------------- */
   function evidenceHTML(p) {
     var d = t();
-    var has = p.evidence && p.evidence.length;
-    if (!has) {
-      return '<div class="evidence"><h2>' + esc(lang === 'zh' ? '关键素材' : 'Key material') + '</h2>' +
+    var blockTitle = lang === 'zh' ? '关键素材' : 'Key material';
+    if (!p.evidence || !p.evidence.length) {
+      return '<div class="evidence"><h2 class="sub-title">' + esc(blockTitle) + '</h2>' +
         '<div class="evidence-grid"><div class="evidence-item"><span>' + esc(d.ui.placeholder) + '</span></div></div>' +
         (p.evidenceNote ? '<p class="evidence-note">' + esc(p.evidenceNote) + '</p>' : '') + '</div>';
     }
@@ -678,12 +681,12 @@ button { font: inherit; cursor: pointer; }
         '<img src="' + esc(ev.src) + '" alt="' + esc(ev.caption || '') + '" data-zoom loading="lazy" />' +
         (ev.caption ? '<figcaption>' + esc(ev.caption) + '</figcaption>' : '') + '</figure>';
     }).join('');
-    return '<div class="evidence"><h2>' + esc(lang === 'zh' ? '关键素材' : 'Key material') + '</h2>' +
+    return '<div class="evidence"><h2 class="sub-title">' + esc(blockTitle) + '</h2>' +
       '<div class="evidence-grid">' + items + '</div>' +
       (p.evidenceNote ? '<p class="evidence-note">' + esc(p.evidenceNote) + '</p>' : '') + '</div>';
   }
 
-  /* ---------------- 项目详情页 ---------------- */
+  /* ---------------- 项目详情页（STAR） ---------------- */
   function renderProjectPage() {
     var d = t();
     var params = new URLSearchParams(location.search);
@@ -702,6 +705,7 @@ button { font: inherit; cursor: pointer; }
     var p = d.projects[idx];
     var cat = d.categories.find(function (c) { return c.key === p.category; });
     var badges = p.badge.map(function (b) { return '<span class="chip">' + esc(b) + '</span>'; }).join('');
+
     var stats = '';
     if (p.stats && p.stats.length) {
       stats = '<div class="stats">' + p.stats.map(function (s) {
@@ -709,11 +713,24 @@ button { font: inherit; cursor: pointer; }
           '<div class="stat__label">' + esc(s.label) + '</div></div>';
       }).join('') + '</div>' + (p.statsNote ? '<p class="stats-note">' + esc(p.statsNote) + '</p>' : '');
     }
-    var sections = p.sections.map(function (sec, i) {
+
+    var secLabels = { situation: d.ui.situation, task: d.ui.task, action: d.ui.action, result: d.ui.result };
+    var sections = p.sections.map(function (sec) {
+      var label = secLabels[sec.key] || '';
+      var isResult = sec.key === 'result';
       var body = sec.body.map(function (para) { return '<p>' + esc(para) + '</p>'; }).join('');
-      return '<div class="project-section"><h2><span class="sec-no">' + String(i + 1).padStart(2, '0') + '</span>' +
-        esc(sec.heading) + '</h2><div class="project-section__body">' + body + '</div></div>';
+      return '<div class="project-section' + (isResult ? ' project-section--result' : '') + '">' +
+        '<h2><span class="sec-label">' + esc(label) + '</span></h2>' +
+        '<div class="project-section__body">' + body + '</div></div>';
     }).join('');
+
+    var oneLine = p.oneLine
+      ? '<div class="one-liner"><span class="one-liner__label">' + esc(d.ui.oneLine) + '</span>' +
+        '<p>' + esc(p.oneLine) + '</p></div>'
+      : '';
+    var materials = p.materials
+      ? '<div class="materials"><span class="materials__label">' + esc(d.ui.materials) + '</span><p>' + esc(p.materials) + '</p></div>'
+      : '';
 
     var prev = d.projects[idx - 1];
     var next = d.projects[idx + 1];
@@ -728,13 +745,14 @@ button { font: inherit; cursor: pointer; }
       '<div class="wrap">' +
         '<div class="project-hero">' +
           '<a class="project-back" href="index.html#portfolio">← ' + esc(d.ui.backHome) + '</a>' +
-          '<div class="project-hero__cat">' + esc(cat ? cat.name : '') + ' · ' + esc(p.no) + '</div>' +
+          '<div class="project-hero__cat">' + esc(cat ? cat.name : (p.type || '')) + ' · ' + esc(p.no) + '</div>' +
           '<h1 class="project-hero__title">' + esc(p.title) + '</h1>' +
           '<p class="project-hero__sub">' + esc(p.subtitle) + '</p>' +
+          (p.type ? '<p class="project-hero__type"><span>' + esc(d.ui.projectType) + '：</span>' + esc(p.type) + '</p>' : '') +
           '<div class="chip-row">' + badges + '</div>' + stats +
           (p.disclaimer ? '<div class="disclaimer">' + esc(p.disclaimer) + '</div>' : '') +
         '</div>' +
-        '<div class="project-body">' + sections + evidenceHTML(p) + navHtml + '</div>' +
+        '<div class="project-body">' + sections + oneLine + materials + evidenceHTML(p) + navHtml + '</div>' +
       '</div>';
   }
 
@@ -778,8 +796,8 @@ button { font: inherit; cursor: pointer; }
           window.open(pdf, '_blank');
         } else {
           toast(lang === 'zh'
-            ? '简历 PDF 待上传：把 PDF 放到 assets/documents/resume/ 目录，并在 content.js 的 contact.resumePdf 填入路径后重新发布。'
-            : 'Résumé PDF pending: place the PDF in assets/documents/resume/ and set contact.resumePdf in content.js, then republish.');
+            ? '简历 PDF 待上传：上传后将在此提供下载。'
+            : 'Résumé PDF pending: the download will appear here once uploaded.');
         }
       });
     });
@@ -793,11 +811,7 @@ button { font: inherit; cursor: pointer; }
     } else {
       renderHero();
       renderAbout();
-      renderCompetencies();
-      renderSkills();
-      renderResume();
       renderPortfolio();
-      renderExperience();
       renderContact();
       highlightNav();
     }
