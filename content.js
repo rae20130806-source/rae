@@ -62,7 +62,7 @@ window.SITE_DATA = {
       seeking: ['AI 产品运营', 'AI 运营', 'AI 内容运营'],
       location: '苏州优先 · 也考虑上海 / 杭州 / 深圳 / 北京 / 广州 / 长沙',
       availability: '实习 / 校招 / 全职',
-      photo: '',
+      photo: 'portrait.jpg',
       photoPlaceholder: '正面证件照位置',
       photoHint: '照片待上传'
     },
@@ -238,7 +238,11 @@ window.SITE_DATA = {
         title: 'AI 漫剧创作实验',
         subtitle: '通过多种 AI 工具协作，完成从创意构思到视频成片的内容生产实验。',
         oneLine: '通过多种 AI 工具协作，完成从创意构思到视频成片的内容生产实验。',
-        cover: '',
+        cover: 'comic-storyboard.jpg',
+        evidence: [
+          { type: 'video', src: 'comic-episode.mp4', poster: 'comic-cover.jpg', caption: 'AI 漫剧成片片段（约 1 分钟，个人实验作品）' },
+          { type: 'image', src: 'comic-storyboard.jpg', caption: '角色人物设定与场景分镜图' }
+        ],
         sections: [
           { key: 'situation', body: [
             '希望探索 AI 工具在数字内容生产中的应用，尝试通过多个 AI 工具完成一集完整的短篇漫剧。'
@@ -260,8 +264,7 @@ window.SITE_DATA = {
           ]}
         ],
         materials: '完整剧本、人物设定图、场景图、分镜图、关键帧、视频成片。',
-        evidence: [],
-        evidenceNote: '作品尚未公开发布，素材待本人确认后可展示。',
+        evidenceNote: '此处展示成片片段与角色设定/场景分镜图；作品尚未在公开平台发布，剧本、场景图、关键帧等素材待补充。',
         disclaimer: '说明：这是个人 AIGC 创作实验，尚未公开发布，不是商业交付或客户项目。'
       },
       {
@@ -274,7 +277,10 @@ window.SITE_DATA = {
         title: '个人抖音音乐账号运营',
         subtitle: '独立完成个人音乐账号从定位、制作到发布的完整内容运营流程。',
         oneLine: '独立完成个人音乐账号从定位、制作到发布的完整内容运营流程。',
-        cover: '',
+        cover: 'douyin-qr.jpg',
+        evidence: [
+          { type: 'image', src: 'douyin-qr.jpg', caption: '抖音账号主页二维码（@Raela，抖音号 28661267486）' }
+        ],
         stats: [
           { value: '28', label: '发布作品' },
           { value: '89', label: '粉丝' },
@@ -305,8 +311,7 @@ window.SITE_DATA = {
           ]}
         ],
         materials: '账号主页截图、3—5 条代表性作品、作品数据截图、录制和制作过程照片。',
-        evidence: [],
-        evidenceNote: '素材待本人确认后可公开，不使用假截图冒充真实数据。',
+        evidenceNote: '此处展示账号主页二维码，扫码可查看账号与代表作品；数据截图等素材待补充，不使用假截图冒充真实数据。',
         disclaimer: '说明：这是个人账号实践，不包装成成熟商业账号，也不夸大增长成绩。'
       },
       {
@@ -426,7 +431,7 @@ window.SITE_DATA = {
       eyebrow: '联系我',
       title: '期待与你交流。',
       intro: '无论是工作机会、项目合作，还是 AI 产品与内容创作方面的交流，都欢迎联系我。',
-      email: '',
+      email: '1604894945@qq.com',
       phone: '',
       github: 'https://github.com/rae20130806-source/rae',
       linkedin: '',
@@ -498,7 +503,7 @@ window.SITE_DATA = {
       seeking: ['AI Product Operations', 'AI Operations', 'AI Content Operations'],
       location: 'Suzhou preferred · also open to Shanghai / Hangzhou / Shenzhen / Beijing / Guangzhou / Changsha',
       availability: 'Internships / campus hiring / full-time',
-      photo: '',
+      photo: 'portrait.jpg',
       photoPlaceholder: 'Portrait photo space',
       photoHint: 'Photo to be added'
     },
@@ -674,7 +679,11 @@ window.SITE_DATA = {
         title: 'AI-generated Comic Production Experiment',
         subtitle: 'An experiment in end-to-end digital content production through multi-tool AI collaboration.',
         oneLine: 'An experiment in end-to-end digital content production through multi-tool AI collaboration.',
-        cover: '',
+        cover: 'comic-storyboard.jpg',
+        evidence: [
+          { type: 'video', src: 'comic-episode.mp4', poster: 'comic-cover.jpg', caption: 'AI comic episode excerpt (~1 min, personal experiment)' },
+          { type: 'image', src: 'comic-storyboard.jpg', caption: 'Character design and scene storyboard sheets' }
+        ],
         sections: [
           { key: 'situation', body: [
             'To explore the potential of AI in digital content production, I experimented with creating a short comic episode using multiple AI tools.'
@@ -696,8 +705,7 @@ window.SITE_DATA = {
           ]}
         ],
         materials: 'Full script, character design sheets, scene images, storyboards, key frames, and final video.',
-        evidence: [],
-        evidenceNote: 'The work has not been publicly released; material will be shown after confirmation.',
+        evidenceNote: 'Shown here: an episode excerpt and the character design / scene storyboard sheets. The work has not been released publicly; script, scene images and key frames are still to be added.',
         disclaimer: 'Note: This is a personal AIGC experiment, not yet publicly released — not a commercial or client project.'
       },
       {
@@ -710,7 +718,10 @@ window.SITE_DATA = {
         title: 'Personal Music Content Account',
         subtitle: 'Independently managed the full content workflow of a personal music account, from positioning to production and publishing.',
         oneLine: 'Independently managed the full content workflow of a personal music account, from positioning to production and publishing.',
-        cover: '',
+        cover: 'douyin-qr.jpg',
+        evidence: [
+          { type: 'image', src: 'douyin-qr.jpg', caption: 'Douyin account QR code (@Raela, ID 28661267486)' }
+        ],
         stats: [
           { value: '28', label: 'Published videos' },
           { value: '89', label: 'Followers' },
@@ -741,8 +752,7 @@ window.SITE_DATA = {
           ]}
         ],
         materials: 'Account homepage screenshot, 3–5 representative works, performance data screenshots, and production process photos.',
-        evidence: [],
-        evidenceNote: 'Material pending confirmation before publishing; no fake screenshots will stand in for real data.',
+        evidenceNote: 'Shown here: the account homepage QR code — scan to view the account and featured videos. Data screenshots are to be added; no fake screenshots stand in for real data.',
         disclaimer: 'Note: This is a personal account practice — not a mature commercial account, and no growth results are exaggerated.'
       },
       {
@@ -862,7 +872,7 @@ window.SITE_DATA = {
       eyebrow: 'Contact',
       title: 'Let’s Connect.',
       intro: 'Whether it’s a career opportunity, a project collaboration, or a conversation about AI products and content creation, I’d be happy to connect.',
-      email: '',
+      email: '1604894945@qq.com',
       phone: '',
       github: 'https://github.com/rae20130806-source/rae',
       linkedin: '',
