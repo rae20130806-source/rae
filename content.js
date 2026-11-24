@@ -175,11 +175,6 @@ window.SITE_DATA = {
           tools: ['WorkBuddy', 'Claude Code', 'Codex'],
           usage: '辅助理解代码、修改网页、整理需求与推进网站迭代（辅助性质，非专业开发）'
         },
-        {
-          title: '网站搭建与代码管理',
-          tools: ['GitHub', 'Netlify', 'HTML', 'CSS', 'JavaScript'],
-          usage: '用 GitHub 管理代码、用 Netlify 部署网站；HTML / CSS / JavaScript 为网站搭建中的基础应用与学习实践，非专业前端开发能力'
-        }
       ],
       note: '说明：PS、Excel、PPT 等工具目前不熟练；英语、韩语无正式成绩支持，不标注等级或熟练程度。'
     },
@@ -198,35 +193,79 @@ window.SITE_DATA = {
         category: 'ai-product',
         no: '01',
         featured: true,
-        type: '个人体验研究 / 产品观察',
-        badge: ['个人体验研究', '产品观察'],
-        title: 'AI 产品体验与用户需求分析',
-        subtitle: '从长期真实使用出发，将 AI 产品体验转化为可观察的问题与优化思考。',
-        oneLine: '从长期真实使用出发，将 AI 产品体验转化为可观察的问题与优化思考。',
+        type: 'AI 产品体验与分析',
+        badge: ['AI 产品体验', '产品分析'],
+        title: 'ChatGPT 产品体验与优化建议报告',
+        subtitle: '通过实际使用，了解 AI 产品的功能和用户体验，发现问题并尝试提出优化建议。',
+        oneLine: '从真实使用出发，观察产品问题，提出可执行的优化方向。',
         cover: '',
-        sections: [
-          { key: 'situation', body: [
-            '长期使用 AI 互动文字游戏和通用 AI 助手，在持续使用过程中，我发现部分 AI 产品在长对话场景下容易出现记忆丢失、上下文衔接不稳定和内容逻辑混乱等问题。'
-          ]},
-          { key: 'task', body: [
-            '希望从真实用户的角度记录这些问题，理解它们对使用体验的影响，并探索可能的产品优化方向。'
-          ]},
-          { key: 'action', body: [
-            '长期体验 ChatGPT、DeepSeek、Gemini、Grok 等产品。',
-            '观察不同产品的交互方式与内容生成表现。',
-            '记录记忆丢失、角色偏离和逻辑不一致等问题。',
-            '在实际使用中尝试修正问题。',
-            '从用户需求出发思考可能的优化方式。'
-          ]},
-          { key: 'result', body: [
-            '形成了对 AI 产品长期使用体验的持续观察，积累了关于记忆能力、交互一致性和用户持续使用需求的具体问题记录。',
-            '目前正在进一步整理为结构化的产品体验分析报告。'
-          ]}
-        ],
-        materials: 'AI 产品界面截图、真实问题记录、产品体验分析报告、优化建议。',
+        report: {
+          title: 'ChatGPT 产品体验与优化建议报告',
+          meta: [
+            { label: '项目类型', value: 'AI 产品体验与分析' },
+            { label: '体验产品', value: 'ChatGPT' },
+            { label: '项目目的', value: '通过实际使用，了解 AI 产品的功能和用户体验，发现使用过程中存在的问题，并尝试提出优化建议。' }
+          ],
+          blocks: [
+            { t: 'h', v: '一、产品体验' },
+            { t: 'p', v: '我选择 ChatGPT 作为本次体验对象，主要测试了以下几个方面：' },
+            { t: 'ol', v: [
+              '信息问答：能否理解用户的问题，并提供清晰、有用的回答。',
+              '学习辅助：能否帮助零基础用户理解新知识，并提供学习建议。',
+              '长对话体验：多轮交流中能否理解上下文，保持对话连贯。',
+              '内容创作：能否根据用户要求生成符合需求的内容。',
+              '复杂任务：能否理解多个要求，并按照步骤完成任务。'
+            ]},
+            { t: 'p', v: '通过体验，我发现 ChatGPT 不仅可以回答问题，还能辅助学习、整理信息、生成内容和提供解决方案。' },
+            { t: 'h', v: '二、体验中发现的问题' },
+            { t: 'p', v: '在实际使用过程中，我发现了一个值得关注的问题：' },
+            { t: 'p', v: '对于刚开始学习一个新领域的用户来说，AI 提供的信息虽然比较全面，但有时信息量较大，用户不一定知道应该从哪里开始，也不清楚下一步该做什么。' },
+            { t: 'p', v: '例如，我刚开始学习 AI 产品运营时，向 ChatGPT 询问岗位相关知识。它能够介绍岗位职责、日常工作和入门任务，但对于零基础用户来说，仍然需要自己判断哪些内容应该优先学习。' },
+            { t: 'p', v: '我认为，这不仅是回答内容的问题，也涉及产品如何帮助用户完成学习目标。' },
+            { t: 'h', v: '三、我的优化建议' },
+            { t: 'p', v: '针对这个问题，我提出一个优化方向：增加一个可选的「个性化学习模式」。' },
+            { t: 'p', v: '用户开启该模式后，AI 先了解三个方面：' },
+            { t: 'ul', v: [
+              '当前基础：是否了解相关知识，有没有经验。',
+              '学习目标：希望掌握什么内容。',
+              '可投入时间：每天能够学习多长时间。'
+            ]},
+            { t: 'p', v: 'AI 根据用户的回答，生成一份适合用户的学习计划，并推荐当天可以完成的任务。' },
+            { t: 'quote', v: '例如：一名没有互联网工作经验的应届毕业生，希望在一个月内了解 AI 产品运营，每天可以学习一小时。AI 可以根据他的情况，将学习内容分成几个阶段，并提供每天的学习任务。' },
+            { t: 'p', v: '这样用户就不需要一次性面对大量信息，而是可以按照自己的节奏逐步学习。' },
+            { t: 'h', v: '四、如何判断优化是否有效？' },
+            { t: 'p', v: '如果这个功能真正上线，我认为可以重点关注以下数据：' },
+            { t: 'table', head: ['观察指标', '主要目的'], rows: [
+              ['功能使用人数', '了解用户是否愿意使用该功能'],
+              ['学习计划完成率', '判断计划是否具有可执行性'],
+              ['首个任务完成率', '判断用户能否顺利开始学习'],
+              ['7日留存率', '观察用户是否愿意持续使用'],
+              ['用户满意度', '了解用户对功能的评价']
+            ]},
+            { t: 'note', v: '以上属于我提出的效果评估指标，目前还没有实际上线数据。' },
+            { t: 'h', v: '五、我的项目收获与下一步计划' },
+            { t: 'p', v: '通过这次体验，我对 AI 产品运营有了更具体的认识。' },
+            { t: 'p', v: '我发现，产品运营不只是介绍产品功能或发布内容，还需要站在用户的角度思考：' },
+            { t: 'ul', v: [
+              '用户为什么使用这个产品？',
+              '用户在使用过程中遇到了什么问题？',
+              '产品能不能更好地满足用户需求？',
+              '提出的优化方案应该如何判断效果？'
+            ]},
+            { t: 'p', v: '接下来，我计划继续从三个方面学习和实践：' },
+            { t: 'ol', v: [
+              '产品体验：继续体验不同 AI 产品，了解它们的功能、特点和使用场景。',
+              '用户需求分析：学习如何从用户反馈和实际使用场景中发现问题。',
+              '运营实践：尝试设计产品功能介绍、用户引导内容和简单的运营活动，并学习基础数据分析。'
+            ]},
+            { t: 'p', v: '希望通过持续实践，逐步掌握 AI 产品运营的基本工作方法。' }
+          ]
+        },
+        sections: [],
+        materials: '',
         evidence: [],
-        evidenceNote: '素材待本人确认后可公开，不使用 AI 生成的假截图冒充真实产品界面。',
-        disclaimer: '说明：本项目为个人体验研究 / 产品观察，不是正式商业产品测试或产品开发项目。'
+        evidenceNote: '',
+        disclaimer: '说明：这是个人体验分析报告，提出的效果评估指标尚未上线，目前没有实际上线数据。'
       },
       {
         id: 'aigc-mini-drama',
@@ -238,7 +277,7 @@ window.SITE_DATA = {
         title: 'AI 漫剧创作实验',
         subtitle: '通过多种 AI 工具协作，完成从创意构思到视频成片的内容生产实验。',
         oneLine: '通过多种 AI 工具协作，完成从创意构思到视频成片的内容生产实验。',
-        cover: 'comic-storyboard.jpg',
+        cover: '',
         evidence: [
           { type: 'video', src: 'comic-episode.mp4', poster: 'comic-cover.jpg', caption: 'AI 漫剧成片片段（约 1 分钟，个人实验作品）' },
           { type: 'image', src: 'comic-storyboard.jpg', caption: '角色人物设定与场景分镜图' }
@@ -277,7 +316,7 @@ window.SITE_DATA = {
         title: '个人抖音音乐账号运营',
         subtitle: '独立完成个人音乐账号从定位、制作到发布的完整内容运营流程。',
         oneLine: '独立完成个人音乐账号从定位、制作到发布的完整内容运营流程。',
-        cover: 'douyin-qr.jpg',
+        cover: '',
         evidence: [
           { type: 'image', src: 'douyin-qr.jpg', caption: '抖音账号主页二维码（@Raela，抖音号 28661267486）' }
         ],
@@ -431,11 +470,11 @@ window.SITE_DATA = {
       eyebrow: '联系我',
       title: '期待与你交流。',
       intro: '无论是工作机会、项目合作，还是 AI 产品与内容创作方面的交流，都欢迎联系我。',
-      email: '1604894945@qq.com',
+      email: 'rae20130806@gmail.com',
       phone: '',
       github: 'https://github.com/rae20130806-source/rae',
       linkedin: '',
-      resumePdf: '',
+      resumePdf: 'resume.pdf',
       labels: {
         email: '邮箱',
         phone: '电话',
@@ -616,11 +655,6 @@ window.SITE_DATA = {
           tools: ['WorkBuddy', 'Claude Code', 'Codex'],
           usage: 'Assisting with code understanding, page edits, requirement organizing and website iteration (assistive, not professional development)'
         },
-        {
-          title: 'Web Development & Code Management',
-          tools: ['GitHub', 'Netlify', 'HTML', 'CSS', 'JavaScript'],
-          usage: 'GitHub for code, Netlify for deployment; HTML/CSS/JavaScript are basic application and learning practice in site building, not professional front-end development'
-        }
       ],
       note: 'Note: I am not yet proficient in Photoshop, Excel or PPT; English and Korean have no formal certification, so no levels are claimed.'
     },
@@ -639,35 +673,79 @@ window.SITE_DATA = {
         category: 'ai-product',
         no: '01',
         featured: true,
-        type: 'Personal experience research / product observation',
-        badge: ['Experience research', 'Product observation'],
-        title: 'AI Product Experience & User Insight',
-        subtitle: 'Turning real-world AI usage into actionable product observations and improvement ideas.',
-        oneLine: 'Turning real-world AI usage into actionable product observations and improvement ideas.',
+        type: 'AI Product Experience & Analysis',
+        badge: ['Product Experience', 'Product Analysis'],
+        title: 'ChatGPT Product Experience & Improvement Report',
+        subtitle: 'Understanding an AI product through real use, identifying issues, and proposing practical improvements.',
+        oneLine: 'Observing real product issues and proposing actionable improvement directions.',
         cover: '',
-        sections: [
-          { key: 'situation', body: [
-            'Through long-term use of AI interactive storytelling products and general-purpose AI assistants, I noticed recurring issues in extended conversations, including memory loss, inconsistent contextual continuity, and logical inconsistencies.'
-          ]},
-          { key: 'task', body: [
-            'The goal was to document these issues from a real user’s perspective, understand their impact on the experience, and explore potential product improvements.'
-          ]},
-          { key: 'action', body: [
-            'Used products including ChatGPT, DeepSeek, Gemini, and Grok.',
-            'Observed differences in interaction and content generation.',
-            'Identified issues involving memory loss, character inconsistency, and logical continuity.',
-            'Tried different ways to correct issues during actual use.',
-            'Considered potential improvements from the user’s perspective.'
-          ]},
-          { key: 'result', body: [
-            'Developed an ongoing record of AI product experiences and accumulated observations concerning memory, interaction consistency, and long-term user needs.',
-            'The observations are being developed into a structured product experience analysis report.'
-          ]}
-        ],
-        materials: 'AI product interface screenshots, real issue logs, experience analysis report, and improvement suggestions.',
+        report: {
+          title: 'ChatGPT Product Experience & Improvement Report',
+          meta: [
+            { label: 'Project type', value: 'AI Product Experience & Analysis' },
+            { label: 'Product', value: 'ChatGPT' },
+            { label: 'Purpose', value: 'To understand an AI product’s features and user experience through real use, identify issues, and propose improvements.' }
+          ],
+          blocks: [
+            { t: 'h', v: '1. Product Experience' },
+            { t: 'p', v: 'I chose ChatGPT as the subject of this experience and tested the following areas:' },
+            { t: 'ol', v: [
+              'Q&A: Can it understand questions and provide clear, useful answers?',
+              'Learning support: Can it help beginners understand new knowledge and give study advice?',
+              'Long conversations: Can it follow context and stay coherent across multiple turns?',
+              'Content creation: Can it generate content that meets the user’s requirements?',
+              'Complex tasks: Can it understand multiple requirements and complete tasks step by step?'
+            ]},
+            { t: 'p', v: 'Through this experience, I found that ChatGPT can not only answer questions, but also support learning, organize information, generate content, and provide solutions.' },
+            { t: 'h', v: '2. Issues Found' },
+            { t: 'p', v: 'During real use, I noticed one issue worth attention:' },
+            { t: 'p', v: 'For users who are just starting to learn a new field, the information AI provides is comprehensive, but often overwhelming. Users may not know where to start or what to do next.' },
+            { t: 'p', v: 'For example, when I first started learning AI product operations, I asked ChatGPT about the role. It explained responsibilities, daily work, and entry tasks, but as a beginner I still had to decide what to prioritize.' },
+            { t: 'p', v: 'I believe this is not only about the answer itself, but also about how the product helps users achieve learning goals.' },
+            { t: 'h', v: '3. Improvement Suggestion' },
+            { t: 'p', v: 'To address this, I propose one direction: add an optional “Personalized Learning Mode”.' },
+            { t: 'p', v: 'Once enabled, the AI first learns three things:' },
+            { t: 'ul', v: [
+              'Current level: existing knowledge and experience.',
+              'Learning goal: what the user wants to master.',
+              'Time available: how much time the user can study each day.'
+            ]},
+            { t: 'p', v: 'The AI then generates a study plan suited to the user and recommends tasks that can be completed that day.' },
+            { t: 'quote', v: 'For example: a new graduate with no internet industry experience wants to understand AI product operations within one month, with one hour of study per day. The AI could break the content into stages and give daily tasks.' },
+            { t: 'p', v: 'This way, users do not face a large amount of information at once, but can learn step by step at their own pace.' },
+            { t: 'h', v: '4. How to Measure Effectiveness' },
+            { t: 'p', v: 'If this feature were launched, I would focus on the following metrics:' },
+            { t: 'table', head: ['Metric', 'Purpose'], rows: [
+              ['Feature users', 'Whether users are willing to try the feature'],
+              ['Study plan completion rate', 'Whether the plan is actionable'],
+              ['First task completion rate', 'Whether users can start smoothly'],
+              ['7-day retention', 'Whether users keep coming back'],
+              ['User satisfaction', 'How users evaluate the feature']
+            ]},
+            { t: 'note', v: 'These are my proposed evaluation metrics; there is no live data yet.' },
+            { t: 'h', v: '5. Takeaways & Next Steps' },
+            { t: 'p', v: 'Through this experience, I gained a more concrete understanding of AI product operations.' },
+            { t: 'p', v: 'I realized product operations is not only about introducing features or publishing content, but also about thinking from the user’s perspective:' },
+            { t: 'ul', v: [
+              'Why do users use this product?',
+              'What problems do users encounter?',
+              'Can the product better meet user needs?',
+              'How should we evaluate whether a solution works?'
+            ]},
+            { t: 'p', v: 'Next, I plan to keep learning and practicing in three areas:' },
+            { t: 'ol', v: [
+              'Product experience: try different AI products and understand their features and use cases.',
+              'User needs analysis: learn to identify problems from feedback and real usage scenarios.',
+              'Operations practice: design feature introductions, user guidance, simple campaigns, and learn basic data analysis.'
+            ]},
+            { t: 'p', v: 'Through continuous practice, I hope to gradually master the basics of AI product operations.' }
+          ]
+        },
+        sections: [],
+        materials: '',
         evidence: [],
-        evidenceNote: 'Material pending confirmation before publishing; no AI-generated fake screenshots will stand in for real product interfaces.',
-        disclaimer: 'Note: This is personal experience research and product observation — not formal commercial product testing or product development.'
+        evidenceNote: '',
+        disclaimer: 'Note: This is a personal experience analysis report; the proposed metrics are not launched and there is no live data.'
       },
       {
         id: 'aigc-mini-drama',
@@ -679,7 +757,7 @@ window.SITE_DATA = {
         title: 'AI-generated Comic Production Experiment',
         subtitle: 'An experiment in end-to-end digital content production through multi-tool AI collaboration.',
         oneLine: 'An experiment in end-to-end digital content production through multi-tool AI collaboration.',
-        cover: 'comic-storyboard.jpg',
+        cover: '',
         evidence: [
           { type: 'video', src: 'comic-episode.mp4', poster: 'comic-cover.jpg', caption: 'AI comic episode excerpt (~1 min, personal experiment)' },
           { type: 'image', src: 'comic-storyboard.jpg', caption: 'Character design and scene storyboard sheets' }
@@ -718,7 +796,7 @@ window.SITE_DATA = {
         title: 'Personal Music Content Account',
         subtitle: 'Independently managed the full content workflow of a personal music account, from positioning to production and publishing.',
         oneLine: 'Independently managed the full content workflow of a personal music account, from positioning to production and publishing.',
-        cover: 'douyin-qr.jpg',
+        cover: '',
         evidence: [
           { type: 'image', src: 'douyin-qr.jpg', caption: 'Douyin account QR code (@Raela, ID 28661267486)' }
         ],
@@ -872,11 +950,11 @@ window.SITE_DATA = {
       eyebrow: 'Contact',
       title: 'Let’s Connect.',
       intro: 'Whether it’s a career opportunity, a project collaboration, or a conversation about AI products and content creation, I’d be happy to connect.',
-      email: '1604894945@qq.com',
+      email: 'rae20130806@gmail.com',
       phone: '',
       github: 'https://github.com/rae20130806-source/rae',
       linkedin: '',
-      resumePdf: '',
+      resumePdf: 'resume.pdf',
       labels: {
         email: 'Email',
         phone: 'Phone',
